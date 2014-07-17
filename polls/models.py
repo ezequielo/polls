@@ -13,8 +13,9 @@ class Poll (models.Model):
     def __unicode__(self):
         return self.question
     
-#     def was_published_recently(self):
-#         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+    def was_published_recently(self):
+        now = timezone.now()
+        return now - timedelta(days=1) <= self.pub_date <= now
     
 # Choice model
 class Choice(models.Model):
