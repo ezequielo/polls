@@ -30,3 +30,5 @@ class PollMethodTests(TestCase):
         """
         recent_poll = Poll(pub_date=timezone.now() - datetime.timedelta(hours=1))
         self.assertEqual(recent_poll.was_published_recently(), True)
+        
+        
